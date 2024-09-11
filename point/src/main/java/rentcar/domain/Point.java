@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import rentcar.PointApplication;
-import rentcar.domain.Pointdecreased;
+import rentcar.domain.Notavailable;
 import rentcar.domain.Pointincreased;
 
 @Entity
@@ -24,8 +24,8 @@ public class Point {
         Pointincreased pointincreased = new Pointincreased(this);
         pointincreased.publishAfterCommit();
 
-        Pointdecreased pointdecreased = new Pointdecreased(this);
-        pointdecreased.publishAfterCommit();
+        Notavailable notavailable = new Notavailable(this);
+        notavailable.publishAfterCommit();
     }
 
     public static PointRepository repository() {
@@ -45,6 +45,8 @@ public class Point {
 
         Pointincreased pointincreased = new Pointincreased(point);
         pointincreased.publishAfterCommit();
+        Notavailable notavailable = new Notavailable(point);
+        notavailable.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -56,6 +58,8 @@ public class Point {
 
             Pointincreased pointincreased = new Pointincreased(point);
             pointincreased.publishAfterCommit();
+            Notavailable notavailable = new Notavailable(point);
+            notavailable.publishAfterCommit();
 
          });
         */
